@@ -1,7 +1,13 @@
 from logging.config import dictConfig
 from config.default import *
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'pybo.db'))
+# SQLALCHEMY_DATABASE_URI = 'sqlite:///{}'.format(os.path.join(BASE_DIR, 'pybo.db'))
+SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(
+  user='postgres',
+  pw='0000',
+  url='192.168.0.250',
+  db='flask_pybo'
+)
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SECRET_KEY = b"R\xde\x8a\x86\xf4\xd4q\x15`_\xd9U'\x94\xd9\x8a"
 

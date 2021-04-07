@@ -35,7 +35,7 @@ def create_app():
     migrate.init_app(app, db, render_as_batch=True)
   else:
     migrate.init_app(app, db)
-  from . import models
+  from . import models    # 생성한 모델을 플라스크의 Migrate 기능이 인식할 수 있도록 가져오기
 
   # 블루프린트
   from .views import main_views, question_views, answer_views, auth_views, comment_views, vote_views
